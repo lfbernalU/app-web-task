@@ -1,34 +1,17 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import '../scss/ItemTask.scss';
-import { Stack } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-import { removeTodo } from '../store/todoSlice';
 
-
-function ItemTask(props) {
-
-  const dispatch = useDispatch();
-
-  const handleRemove = (e) => {
-    e.preventDefault();
-    dispatch(removeTodo(props.name))
-  }
-
-
+function ItemTask() {
   return (
-    <Card className='rounded-3 shadow border-0 w-75' >
-      <Card.Body>
-        <Card.Title>{ props.name }</Card.Title>
+    <Card className='rounded-3 shadow border-0' >
+      <Card.Body className='text-center mt-2'>
+        <Card.Title>Card Title</Card.Title>
         <Card.Text>
-          { props.description }
-          <br />
-          { props.dueDate && <span className='due-date'>Due: { props.dueDate }</span>}
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
         </Card.Text>
-        <Stack direction="horizontal" gap={3} className='mb-3'>
-          <Button>Edit</Button>
-          <Button onClick={handleRemove}>Delete</Button>
-        </Stack>
+        <Button>Go somewhere</Button>
       </Card.Body>
     </Card>
   );
